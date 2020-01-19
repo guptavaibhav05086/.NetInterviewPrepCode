@@ -1,0 +1,6 @@
+c:\users\praveen\documents\visual studio 2015\Projects\PrepCode\PrepCode\bin\Debug\PrepCode.exe.config
+c:\users\praveen\documents\visual studio 2015\Projects\PrepCode\PrepCode\bin\Debug\PrepCode.exe
+c:\users\praveen\documents\visual studio 2015\Projects\PrepCode\PrepCode\bin\Debug\PrepCode.pdb
+c:\users\praveen\documents\visual studio 2015\Projects\PrepCode\PrepCode\obj\Debug\PrepCode.exe
+c:\users\praveen\documents\visual studio 2015\Projects\PrepCode\PrepCode\obj\Debug\PrepCode.pdb
+C:\Users\Praveen\documents\visual studio 2015\Projects\PrepCode\PrepCode\obj\Debug\PrepCode.csprojResolveAssemblyReference.cache
