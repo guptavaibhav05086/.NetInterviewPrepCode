@@ -43,9 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BST\BSTree.cs" />
+    <Compile Include="BST\Node.cs" />
     <Compile Include="DependencyInjection.cs" />
     <Compile Include="FactoryDesignPattern.cs" />
+    <Compile Include="IEnumeratorExample\People.cs" />
+    <Compile Include="IEnumeratorExample\PeopleEnum.cs" />
+    <Compile Include="IEnumeratorExample\Person.cs" />
     <Compile Include="InheritanceDemo.cs" />
+    <Compile Include="MergeSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

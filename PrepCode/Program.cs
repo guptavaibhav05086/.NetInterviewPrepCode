@@ -5,6 +5,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using PrepCode.IEnumeratorExample;
+
+using PrepCode.BST;
 
 namespace PrepCode
 {
@@ -12,12 +15,57 @@ namespace PrepCode
 
     class Program
     {
+        static void printArray(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n; ++i)
+                Console.WriteLine(arr[i] + " ");
+            Console.ReadLine();
+        }
         static void Main(string[] args)
         {
+            #region anagram..
+            var statusAnagram = Anagram("geeksforgeeks", "forgeeksgeeks");
+            #endregion
+            #region Merge Sort..
+            int[] arr = { 12, 11, 13, 5, 6, 7,200,3,50,201,145,104 };
+            //Array.Sort(arr); To sort the array
+            //String.Join(" ", arr); To Join the array
+            Console.WriteLine("Given Array");
+            printArray(arr);
+           
+            MergeSort ob = new MergeSort();
+            ob.sort(arr, 0, arr.Length - 1);
+
+            Console.WriteLine("\nSorted array");
+            printArray(arr);
+            #endregion
+            #region Binary Search Tree...
+            BSTree tree = new BSTree();
+            tree.Insert(50);
+            tree.Insert(49);
+            tree.Insert(60);
+            tree.Insert(53);
+            tree.Insert(30);
+            tree.Insert(36);
+            tree.Preorder(tree.root);
+            #endregion
             string checkPalindrome = Console.ReadLine();
             var result = CheckPalindrome(checkPalindrome);
             //Value Tyep
-           
+            #region Enumurable Example...
+            Person[] people = new Person[3]
+            {
+            new Person("John", "Smith"),
+            new Person("Jim", "Johnson"),
+            new Person("Sue", "Rabon"),
+            };
+            People peopleList = new People(people);
+            foreach (Person item in peopleList)
+            {
+                Console.Write(item.firstName);
+            }
+            #endregion
             #region Inheritance Implementation demo...
             Child c = new Child(10);
             Parent referenceTypeParent = c;
@@ -114,7 +162,7 @@ namespace PrepCode
             dd.ProcessLog(myLogger);
             #endregion
 
-
+            
             Console.ReadLine();
         }
 
@@ -278,6 +326,45 @@ namespace PrepCode
                     return false;
             }
             return true;
+        }
+        #endregion
+
+        #region anagram Check..
+
+        public static bool Anagram(string str1,string str2)
+        {
+            bool result = true;
+
+            var r = (from a in str1.ToLower().ToCharArray() group a by a into c orderby c.Key select new {
+                key=c.Key,
+                count= c.Count()
+
+            } ).ToList();
+            var s = (from a in str2.ToLower().ToCharArray() group a by a into c orderby c.Key
+                     select new
+                     {
+                         key = c.Key,
+                         count = c.Count()
+
+                     }).ToList();
+            
+            if(r.Count == s.Count)
+            {
+                for (int i = 0; i < r.Count -1; i++)
+                {
+                   if( r[i].key !=s[i].key || r[i].count != s[i].count)
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
         #endregion
     }
